@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B2B26"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Green Piano"
+        android:textColor="#E6FFF7"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tap a key to play a note"
+        android:textColor="#B8E6D6"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top Buttons Row -->
+    <LinearLayout
+        android:id="@+id/topButtonsRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/mohid"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Mohid!"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#0B2B26"
+            android:backgroundTint="#39D98A"
+            android:layout_marginEnd="10dp"
+            app:cornerRadius="14dp" />
+
+        <Button
+            android:id="@+id/sound"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Play a Sound!"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#E6FFF7"
+            android:backgroundTint="#145A4E"
+            android:layout_marginStart="10dp"
+            app:cornerRadius="14dp" />
+    </LinearLayout>
+
+    <!-- Piano Container (Card style) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pianoCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#0F3A33"
+        app:layout_constraintTop_toBottomOf="@+id/topButtonsRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/pianoLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="One Octave (C → B)"
+                android:textColor="#B8E6D6"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Black Keys Row -->
+            <LinearLayout
+                android:id="@+id/blackKeysRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/pianoLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btnCs"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1"
+                    android:text="C#"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#E6FFF7"
+                    android:backgroundTint="#0A1F1B"
+                    app:cornerRadius="12dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnDs"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1"
+                    android:text="D#"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#E6FFF7"
+                    android:backgroundTint="#0A1F1B"
+                    app:cornerRadius="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnFs"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1"
+                    android:text="F#"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#E6FFF7"
+                    android:backgroundTint="#0A1F1B"
+                    app:cornerRadius="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnGs"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1"
+                    android:text="G#"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#E6FFF7"
+                    android:backgroundTint="#0A1F1B"
+                    app:cornerRadius="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnAs"
+                    android:layout_width="0dp"
+                    android:layout_height="58dp"
+                    android:layout_weight="1"
+                    android:text="A#"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#E6FFF7"
+                    android:backgroundTint="#0A1F1B"
+                    app:cornerRadius="12dp"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <!-- White Keys Row -->
+            <LinearLayout
+                android:id="@+id/whiteKeysRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/blackKeysRow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <Button
+                    android:id="@+id/btnC"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="C"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnD"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="D"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnE"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="E"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnF"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="F"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnG"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="G"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnA"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="A"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnB"
+                    android:layout_width="0dp"
+                    android:layout_height="86dp"
+                    android:layout_weight="1"
+                    android:text="B"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#0B2B26"
+                    android:backgroundTint="#E6FFF7"
+                    app:cornerRadius="14dp"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
